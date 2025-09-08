@@ -4,6 +4,7 @@ import pygame as pg
 import random, time
 pg.init()
 clock = pg.time.Clock()
+import asyncio
 
 win_width = 900
 win_height = 600
@@ -128,7 +129,7 @@ def heart_collision_check(heart_data, player_pos):
 player_speed = 10
 running = True
 
-def main():
+async def main():
 
     global running, speed_x, speed_y, player_x, player_y, player_pos
 
@@ -205,4 +206,7 @@ def main():
         clock.tick(60)
         pg.display.flip()
 
-main()
+
+        await asyncio.sleep(0)
+
+asyncio.run(main())
